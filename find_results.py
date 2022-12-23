@@ -193,10 +193,18 @@ class BFBForceColorSchemeCommand(sublime_plugin.EventListener):
         syntax = view.settings().get('syntax')
         if syntax and (syntax.endswith("Find Results.hidden-tmLanguage")):
             settings = sublime.load_settings('Find Results.sublime-settings')
-            color_scheme = settings.get('color_scheme')
-            if color_scheme:
-                view.settings().set('color_scheme', color_scheme)
+            if color_scheme == "auto":
+                if sublime.version() >= "4096":
+                    current_style = sublime.ui_info()['theme']['style']
+                else
+                    current_style = "dark"
 
+            if current_style == "light"
+                color_scheme = settings.get('light_color_scheme')
+            else if current_style == "dark"
+                color_scheme = settings.get('dark_color_scheme')
+            
+            view.settings().set('color_scheme', color_scheme)
 
 def plugin_loaded():
     default_package_path = os.path.join(sublime.packages_path(), "Default")

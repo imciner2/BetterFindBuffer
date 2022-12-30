@@ -193,6 +193,8 @@ class BFBForceColorSchemeCommand(sublime_plugin.EventListener):
         syntax = view.settings().get('syntax')
         if syntax and (syntax.endswith("Find Results.hidden-tmLanguage")):
             settings = sublime.load_settings('Find Results.sublime-settings')
+            color_scheme = settings.get('color_scheme')
+
             if color_scheme == "auto":
                 if sublime.version() >= "4096":
                     current_style = sublime.ui_info()['theme']['style']

@@ -198,12 +198,12 @@ class BFBForceColorSchemeCommand(sublime_plugin.EventListener):
             if color_scheme == "auto":
                 if sublime.version() >= "4096":
                     current_style = sublime.ui_info()['theme']['style']
-                else
+                else:
                     current_style = "dark"
 
-            if current_style == "light"
+            if current_style == "light":
                 color_scheme = settings.get('light_color_scheme')
-            else if current_style == "dark"
+            elif current_style == "dark":
                 color_scheme = settings.get('dark_color_scheme')
             
             view.settings().set('color_scheme', color_scheme)

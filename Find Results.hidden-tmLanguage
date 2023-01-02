@@ -37,6 +37,8 @@
 		<dict>
 			<key>match</key>
 			<string>^( +[0-9]+)(:)(.+\n)$</string>
+			<key>name</key>
+			<string>line.match.find-in-files</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
